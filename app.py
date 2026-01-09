@@ -131,7 +131,7 @@ if not st.session_state.initialized:
         st.session_state.show_answer = -1
         st.session_state.initialized = True
 
-        st.rerun()
+        st.experimental_rerun()
 
     st.stop()
 
@@ -147,7 +147,7 @@ if q_idx >= len(st.session_state.questions):
         st.session_state.current_idx = 0
         st.session_state.mistakes = []
         st.session_state.show_answer = -1
-        st.rerun()
+        st.experimental_rerun()
     else:
         st.success("Training session completed!")
         if record_mistake:
@@ -205,7 +205,7 @@ with col1:
     if st.button("✅ Correct"):
         st.session_state.current_idx += 1
         st.session_state.show_answer = -1
-        st.rerun()
+        st.experimental_rerun()
 
 with col2:
     if st.button("❌ Wrong"):
@@ -215,10 +215,11 @@ with col2:
         st.session_state.mistakes.append(item)
         st.session_state.current_idx += 1
         st.session_state.show_answer = -1
-        st.rerun()
+        st.experimental_rerun()
 
 with col3:
     if st.button("🔍 Show Full Entry"):
         st.session_state.show_answer = q_idx
-        st.rerun()
+        st.experimental_rerun()
+
 
