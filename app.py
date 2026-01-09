@@ -90,7 +90,7 @@ if not st.session_state.initialized:
             data = read_csv(uploaded_file)
         else:
             default_csv_map = {
-                "Use Vocabulary CSV": repo_dir / "data/Greek_Vocabulary_Edited.csv",
+                "Use Vocabulary CSV": repo_dir / "data/greek_vocabulary_edited.csv",
                 "Use Verb CSV": repo_dir / "data/greek_verb_form_edited.csv"
             }
             chosen_csv_path = default_csv_map[csv_choice]
@@ -221,3 +221,4 @@ with col3:
     if st.button("🔍 Show Full Entry"):
         st.session_state.show_answer = q_idx
         st.rerun()
+
